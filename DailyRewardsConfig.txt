@@ -1,13 +1,13 @@
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
                                >> Daily Reward Configuration Settings <<
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
--	Use this file to specify which items you want to give out for the different days.
--	For material list, please use: https://dev.bukkit.org/projects/supplies/pages/material-list.
--   For type, use either COMMAND, ITEM or ECONOMY - this will tell the plugin how to handle the request.
--	COMMAND_CRATEKEY - get the server to run a commnad, e.g give a player a Crate Key. (/givekey Westbourne 1).
--	ITEM - give the player an item (Material.IRON_INGOT).
--	ECONOMY - give the player economy ($500)
--	Note: Example COMMAND_CRATEKEY (Day 3) would run the following command on the console: givecratekey vote Westbourne 4. This can be changed depending on what your crate key plugin uses (or changed to any other command)
+Use this file to specify which items you want to give out for the different days.
+For a list of materials, please use: https://dev.bukkit.org/projects/supplies/pages/material-list.
+Type should be set to [ITEM, ECONOMY or COMMAND_CRATE].
+COMMAND_CRATEKEY - This will tell the server to run a command (See examples below).
+ITEM - This will give the player an item. Check the above list for the material names.
+ECONOMY - This will give the player money.
+Examples can be found at the bottom of this file.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 [Day 1]
 Type: COMMAND_CRATEKEY
@@ -50,3 +50,47 @@ Type: COMMAND_CRATEKEY
 Item: givecratekey legendary
 Amount: 1
 Description: Legendary Crate Key
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+[Example 1]
+Type: ITEM -- This tells the plugin that you want to give the player a vanilla item.
+Item: IRON_INGOT -- This is a material from the bukkit materials list. This will be given to the player.
+Amount: 64 -- This is how many of the item you want to give the player.
+Description: Iron Ingots -- This formulates part of the confirmation message players receive.
+
+[Example 2] 
+Type: ECONOMY -- This tells the plugin that you want to give the player money.
+Item: 500 -- This is the amount of money to give them. 
+Amount: 500 -- This is the amount shown on the confirmation message players receive.
+Description: Economy -- This formulates part of the confirmation message players receive.
+
+[Example 3]
+-- For this example, we assume that on your server, the command to give a player a crate key is:
+-- /givekey [KeyType] [Player] [Amount]
+-- /givekey legendary_crate Westbourne 64
+-- Note: You do NOT need to specify the player, this is done automatically by the plugin.
+Type: COMMAND_CRATEKEY -- This tells the plugin you want to run a command that gives the player a cratekey
+Item: givekey legendary_crate -- This tells the plugin the first 2 arguments of the command.
+Amount: 64 -- This tells the plugin the last argument of the command
+Description: Legendary Crate Keys -- This formulates part of the confirmation message players receive.
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                                           >> Further Notes <<
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+This plugin was designed by Westbourne - specifically for Mistylands (Server IP: Mistylands.net).
+Do not change the number of lines in this file, the plugin requires the information in specific places.
+Please only change the information after the colon (:) on each line.
+Do not put extra leading/trailing spaces before/after your entries. (1 space only between : and YourEntry).
+Type must be one of the three types: ITEM, COMMAND_CRATEKEY or ECONOMY.
+If Type is ITEM, Item should be one of the items on the bukkit Materials webpage (see top of this page).
+If Type is COMMAND_CRATEKEY, Item should be the first part of the command (before the playername).
+If Type is ECONOMY, Item should be the amount of money you want to give the player.
+Amount should be an integer only, in all cases.
+If your crate key syntax is not supported by the above limitations, let me know and I will sort it for you.
+Description should be a short description (string).
+This is one of the first plugins I have created and is no where near perfect, however a lot of time and 
+effort has been put in to make sure there are as little bugs as possible.
+Further functionality may be added in the future depending on the demand of users.
+Chat messages, including the colours, may be customisable in future updates.
+Error messages have been added, which will be available in your server's console if things go wrong.
+Please check these errors to make sure your syntax of this file is correct before messaging.
+If you identify a critical bug, have any suggestions, or have a query, please messsage me on Discord at 
+Westbourne#6012.

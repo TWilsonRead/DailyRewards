@@ -1,0 +1,52 @@
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                               >> Daily Reward Configuration Settings <<
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-	Use this file to specify which items you want to give out for the different days.
+-	For material list, please use: https://dev.bukkit.org/projects/supplies/pages/material-list.
+-   For type, use either COMMAND, ITEM or ECONOMY - this will tell the plugin how to handle the request.
+-	COMMAND_CRATEKEY - get the server to run a commnad, e.g give a player a Crate Key. (/givekey Westbourne 1).
+-	ITEM - give the player an item (Material.IRON_INGOT).
+-	ECONOMY - give the player economy ($500)
+-	Note: Example COMMAND_CRATEKEY (Day 3) would run the following command on the console: givecratekey vote Westbourne 4. This can be changed depending on what your crate key plugin uses (or changed to any other command)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+[Day 1]
+Type: COMMAND_CRATEKEY
+Item: givecratekey mystery
+Amount: 2
+Description: Mystery Crate Keys
+
+[Day 2]
+Type: ECONOMY
+Item: 500
+Amount: 500
+Description: Economy
+
+[Day 3]
+Type: COMMAND_CRATEKEY
+Item: givecratekey vote
+Amount: 4
+Description: Vote Crate Keys 
+
+[Day 4]
+Type: ITEM
+Item: IRON_INGOT
+Amount: 64
+Description: Iron Ingots
+
+[Day 5]
+Type: ECONOMY
+Item: 1000
+Amount: 1000
+Description: Economy
+
+[Day 6]
+Type: ITEM
+Item: Material.DIAMOND
+Amount: 16
+Description: Diamonds
+
+[Day 7]
+Type: COMMAND_CRATEKEY
+Item: givecratekey legendary
+Amount: 1
+Description: Legendary Crate Key

@@ -1,0 +1,9 @@
+name: DailyRewards
+main: io.github.TWilsonRead.DailyRewards.DailyRewards
+version: ${version}
+api-version: 1.16
+commands:
+  dailyrewards:
+    description: Display help information relating to this plugin.
+    permission: DailyRewards.dailyrewards
+    permission-message: "[DailyRewards] You don't have permission to do this!"
